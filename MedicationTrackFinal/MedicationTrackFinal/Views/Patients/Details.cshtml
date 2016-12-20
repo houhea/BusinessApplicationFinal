@@ -1,0 +1,78 @@
+﻿@model MedicationTrackFinal.Models.Patient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2> Patient Details</h2>
+
+<br />
+<h4><strong>Patient Name : @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</strong></h4>
+<h4><strong>Nurse Assigned To : @Html.DisplayFor(model => model.Nurse.FirstName)</strong></h4>
+<br />
+<br />
+<br />
+ <div class="table-responsive">
+    <table class="table table-bordered  table-hover ">
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Medication.FillDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medication.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medication.Strength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medication.Directions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medication.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medication.MedType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Medication.DaySupply)
+            </th>
+            <th></th>
+        </tr>
+
+        <tr class="success">
+
+            <td>
+                @Html.DisplayFor(model => model.Medication.FillDate)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Medication.Name)
+            </td>
+            <td>
+                <p> @Html.DisplayFor(model => model.Medication.Strength)MG</p>
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Medication.Directions)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Medication.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Medication.MedType)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.Medication.DaySupply)
+            </td>
+        </tr>
+
+
+    </table>
+    </div>
+
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.PatientId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+
+

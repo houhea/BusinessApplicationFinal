@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MedicationTrackFinal.Models.Nurse>
+
+@{
+    ViewBag.Title = "Employee List";
+}
+
+<h2>Employee List</h2>
+<div class="container">
+    <div class="row">
+        <img src="~/Content/Images/nurseresumewriting-2.jpg" class="col-md-4 col-md-offset-4 img-responsive" />
+    </div>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <div class="table-responsive">
+        <table class="table table-bordered  table-hover ">
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.HireDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr class="warning">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HireDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.NurseId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.NurseId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.NurseId })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
